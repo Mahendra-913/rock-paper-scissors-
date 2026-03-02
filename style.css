@@ -1,0 +1,209 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+h1{
+    background-color: #081b31;
+    color: white;
+    height: 5rem;
+    line-height: 5rem;
+    text-align: center;
+}
+
+.choices
+{
+    /* display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 5rem; */
+
+
+
+display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;   /* was 5rem */
+    gap: 1.5rem; 
+
+}
+
+
+.choice
+{
+    height: 165px;
+    width: 165px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.choice:hover
+{
+    opacity: 0.9;
+    cursor: pointer;
+    background-color: black;
+
+}
+
+img{
+    height: 150px;
+    width: 150px;
+object-fit: cover;
+border-radius: 50%;
+
+}
+
+img:hover
+{
+    opacity: 0.5;
+}
+.score-board
+{
+    display: flex;
+    justify-content: center;
+align-items: center;
+font-size: 2rem;
+  margin-top: 2rem;
+    gap: 5rem;
+}
+
+
+
+#user-score , #computer-score{
+    font-size: 4rem;
+    text-align: center;
+  }
+
+
+/* .msg-container
+{
+   
+    font-size: 2rem;
+    display: inline;
+    border-radius: 10px;
+    padding: 10rem;
+
+} */
+
+
+.msg-container
+{
+    font-size: 2rem;
+    margin-top: 2rem; 
+    text-align: center;
+}
+
+#msg{
+     background-color: black;
+     color:white;
+     display: inline-block;
+     padding: 1rem;    
+border-radius: 1rem;
+    }
+
+
+
+
+
+/* ===== CGPT ADVANCED BATTLE AREA ===== */
+
+/* .cgpt-battle-area{
+    position: relative;
+    height: 250px;
+    margin-top: 3rem;
+    overflow: hidden;
+    text-align: center;
+} */
+
+.cgpt-battle-area{
+    position: relative;
+    height: 200px;   /* was 250px */
+    margin-top: 1.5rem; /* was 3rem */
+    overflow: hidden;
+    text-align: center;
+}
+
+.cgpt-label{
+    position: absolute;
+    top: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.cgpt-user-label{
+    left: 30px;
+}
+
+.cgpt-comp-label{
+    right: 30px;
+}
+
+.cgpt-move{
+    position: absolute;
+    top: 60px;
+    width: 150px;
+    height: 150px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.cgpt-left{ left: -200px; }
+.cgpt-right{ right: -200px; }
+
+.cgpt-left.active{
+    left: 38%;
+    opacity: 1;
+}
+
+.cgpt-right.active{
+    right: 38%;
+    opacity: 1;
+}
+
+/* ===== MORE REALISTIC BLAST ===== */
+
+.cgpt-blast{
+    position: absolute;
+    top: 95px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, yellow 10%, orange 40%, red 70%);
+    border-radius: 50%;
+    opacity: 0;
+}
+
+.cgpt-blast.active{
+    animation: cgptRealBlast 0.4s ease forwards;
+}
+
+@keyframes cgptRealBlast{
+    0%{
+        transform: translateX(-50%) scale(0.2);
+        opacity: 1;
+    }
+    50%{
+        transform: translateX(-50%) scale(1.5);
+        opacity: 1;
+    }
+    100%{
+        transform: translateX(-50%) scale(0);
+        opacity: 0;
+    }
+}
+
+.cgpt-result{
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.8rem;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
